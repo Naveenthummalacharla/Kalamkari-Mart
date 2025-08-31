@@ -1,0 +1,61 @@
+.product-details {
+    @apply container mx-auto my-auto p-3 pt-14 flex justify-start items-center;
+}
+
+.product-layout {
+    @apply grid sm:grid-cols-2 gap-12;
+}
+
+.product-image-section {
+    @apply flex justify-center items-center gap-10
+}
+
+.thumbnail-list {
+    @apply border p-2 rounded-md border-gray-300 flex flex-col gap-2 max-h-96 overflow-auto
+}
+
+.thumbnail-list::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.thumbnail-img {
+    @apply border rounded-md border-gray-400 border-2
+}
+
+.thumbnail-img:hover {
+    @apply border rounded-md border-blue-400 border-2 cursor-pointer p-[2px] rounded-xl transition-all duration-200;
+}
+
+.main-image-wrapper {
+    @apply w-full;
+}
+
+.product-info {
+    @apply text-center sm:text-left space-y-2;
+}
+
+.product-name {
+    @apply text-lg font-semibold text-gray-800;
+}
+
+.sale-price {
+    @apply text-xl font-bold text-red-600;
+}
+
+.original-price {
+    @apply text-gray-500 ms-3 text-sm;
+}
+
+.discount-label {
+    @apply text-sm text-green-600 font-semibold ms-2;
+}
+.qty-selector{
+ @apply flex items-center justify-between  border border-gray-300 rounded-md w-[11rem] px-3 py-2
+}
+.qty-button{
+ @apply text-gray-700 hover:text-blue-600;
+}
+.qty-input{
+ @apply text-center w-1/4 text-sm bg-transparent focus:outline-none
+}

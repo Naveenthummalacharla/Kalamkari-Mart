@@ -1,0 +1,46 @@
+<div class="product-details">
+    <div class="product-layout">
+        <div class="product-image-section">
+            <!-- Thumbnail Images -->
+            <div class="thumbnail-list">
+                @for(img of images; track $index) {
+                <img [src]="img" class="thumbnail-img" width="75" height="60" />
+                }
+            </div>
+            <!-- Main Image -->
+            <div class="main-image-wrapper">
+                <img class="rounded-xl" [src]="data.productImg1" width="400" height="500" />
+            </div>
+        </div>
+        <!-- Product Info -->
+        <div class="product-info">
+            <h5 class="product-name">{{ data.name }}</h5>
+            <div class="price-section">
+                <span class="sale-price">₹{{ data.SalePrice }}</span>
+                <span class="original-price ">
+                    <del>₹{{ data.PurchasePrice }}</del>
+                </span>
+                <span class="discount-label">15% off</span>
+            </div>
+          <div class="qty-selector">
+  <button mat-icon-button class="qty-button">
+    <mat-icon>remove</mat-icon>
+  </button>
+
+  <input
+    matInput
+    type="number"
+    [value]="5"
+    readonly
+    class="qty-input"/>
+
+  <button mat-icon-button  class="qty-button">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="main-container">
+    <div class="grid-container">
+        <!-- Left Image Section -->
+        <div class="image-section">
+            <img src="assets/images/forgetpassword-Img.jpg" 
+                 alt="ForgetPassword Image"  class="rounded-md"
+                 width="400">
+        </div> 
+          <!-- Right Form Section -->       
+        <div class="form-container">
+            <div class="form-inner">
+                   <!-- Back Button -->
+                 <div class="back-button">
+                     <span><mat-icon>arrow_back</mat-icon></span>
+             </div>
+                     <!-- Logo -->
+                <div class=" logo-container">
+                    <img src="assets/images/lotos-logo.png" width="200" height="200" />
+                  </div>
+                  <!-- Heading -->
+                <div class="form-heading">
+                    @if (enablePasswordFields) {
+                    <span class="heading-text">Set New
+                        Password</span>
+                    } @else if(enableOTPFields){
+                    <span class="heading-text">Enter OTP</span>
+                    } @else{
+                    <span class="heading-text">Forget
+                        Password</span>
+                    }
+                </div>
+                  <!-- Form Fields -->
+                <div class="form-section">
+                    @if(enablePasswordFields) {
+                    <div>
+                        <mat-form-field appearance="outline" class="w-full mb-1">
+                            <mat-label>Enter New Password</mat-label>
+                            <input [type]="NewpasswordVisible ? 'text' : 'password'" matInput class="h-12 w-full px-4"
+                                placeholder="Enter New password">
+                            <button mat-icon-button matSuffix (click)="toggleNewPasswordVisibility()" class="me-5">
+                                <mat-icon>{{ NewpasswordVisible ? 'visibility_off' : 'visibility' }}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                    <mat-form-field appearance="outline" class="w-full mb-1">
+                        <mat-label>Conform Password</mat-label>
+                        <input [type]="ConformpasswordVisible ? 'text' : 'password'" matInput class="h-12 w-full px-4"
+                            placeholder="Conform password">
+                        <button mat-icon-button matSuffix (click)="toggleConformPasswordVisibility()" class="me-5">
+                            <mat-icon>{{ ConformpasswordVisible ? 'visibility_off' : 'visibility' }}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <button (click)="submitNewPassword()" matTooltip="Set New Password" 
+                        class="submit-button">
+                        Set New Password
+                    </button>
+                    } @else if(enableOTPFields){
+                    <div class="flex justify-center">
+                        <mat-form-field appearance="outline" class="otp-field">
+                            <input type="text" matInput class="otp-input">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="otp-field">
+                            <input type="number" matInput class="otp-input">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="otp-field">
+                            <input type="number" matInput class="otp-input">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="w-11">
+                            <input type="number" matInput class="otp-input">
+                        </mat-form-field>
+                    </div>
+                    <div class="btn-wrapper">
+                      <button (click)="submitOTP()"  matTooltip="Submit OTP" 
+                        class="submit-button">
+                        Submit OTP
+                    </button>
+                    </div>
+                    } @else{
+                    <mat-form-field appearance="outline" class="w-full">
+                        <mat-label>Email</mat-label>
+                        <input type="email"  name="email"  matInput class="input-field" placeholder="Ex. pat@example.com">
+                    </mat-form-field>
+                    <button (click)="sentOTP()"  matTooltip="Send OTP" 
+                        class="submit-button">
+                        Send OTP
+                    </button>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="login-container">
+  <div class="login-wrapper">
+    <!-- Left: Image -->
+    <div class="login-image-container">
+      <div class="login-image">
+        <img src="assets/images/loginsideimg.png" alt="Login Image" width="550" />
+      </div>
+    </div>
+
+    <!-- Right: Login form -->
+    <div class="login-form-container">
+      <div class="login-form-box">
+        <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm()">
+          <div class="login-title">
+            <span>Login</span>
+          </div>
+
+          <div class="login-logo">
+            <img src="assets/images/lotos-logo.png" width="200" height="200" />
+          </div>
+
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" placeholder="Ex. pat@example.com" />
+            @if (loginForm.get('email')?.errors?.['required'] && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)) {
+              <mat-error>Email is <strong>required</strong></mat-error>
+            }
+            @else if (loginForm.get('email')?.errors?.['email'] && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)) {
+              <mat-error>Please enter a valid email address</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Password</mat-label>
+            <input [type]="passwordVisible ? 'text' : 'password'" formControlName="password" matInput placeholder="Enter your password" />
+            <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" class="toggle-btn">
+              <mat-icon>{{ passwordVisible ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            @if (loginForm.get('password')?.errors?.['required'] && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)) {
+              <mat-error>Password is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+
+          <div class="login-actions">
+            <span class="link" matTooltip="Create Account" matTooltipPosition="right" (click)="CreateAccount()">Create Account</span>
+            <span class="link" matTooltip="Forget Password" matTooltipPosition="left" (click)="ForgetPassword()">Forget Password</span>
+          </div>
+          <div class="btn-container">
+            <button type="submit" class="login-btn" matTooltip="Sign In">
+            Sign In
+             </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

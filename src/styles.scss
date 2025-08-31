@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif !important;
+    background-color: var(--color-bg) !important;
+}
+
+:root {
+    /* Primary Theme Colors */
+    --color-primary: #1D4ED8;
+    /* Blue-700 */
+    --color-primary-light: #3B82F6;
+    /* Blue-500 */
+    --color-primary-dark: #1E40AF;
+    /* Blue-800 */
+
+    /* Accent Colors */
+    --color-accent: #F59E0B;
+    /* Amber-500 */
+    --color-accent-light: #FBBF24;
+    /* Amber-400 */
+
+    /* Background and Surface */
+    --color-bg: rgba(233, 237, 239, 0.45);
+    /* Gray-50 */
+    --color-surface: #FFFFFF;
+    /* White */
+    --color-border: #E5E7EB;
+    /* Gray-200 */
+    --color-input-border: rgba(160, 170, 180, 0.8);
+
+    /* Text Colors */
+    --color-text: #111827;
+    /* Gray-900 */
+    --color-text-muted: #6B7280;
+    /* Gray-500 */
+
+    /* Success, Error, Warning */
+    --color-success: #10B981;
+    /* Green-500 */
+    --color-error: #EF4444;
+    /* Red-500 */
+    --color-warning: #F97316;
+    /* Orange-500 */
+}
+
+//   ****************************Material Input Field Styles****************************
+.mdc-text-field--outlined {
+  --mdc-outlined-text-field-container-shape: 9px;
+}
+.mat-mdc-form-field .mdc-notched-outline__notch {
+    border-right: 0px !important;
+}
+
+.mat-mdc-text-field-wrapper {
+    height: 2.8rem !important;
+    /* You already did */
+    align-items: center;
+    border-radius: 8rem !important;
+    /* Important to center child flex items */
+}
+
+.mat-mdc-form-field-flex {
+    align-items: center !important;
+    /* Center input and label vertically */
+    height: 100%;
+    padding-left: 0;
+    margin-left: 0; 
+}
+
+.mat-mdc-form-field {
+    --mat-form-field-container-height: 46px !important;
+     --mdc-outlined-text-field-outline-color:var(--color-input-border);
+    /* Override height */
+}
+
+p.mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+    top: calc(50px / 2) !important;
+    /* Adjust floating label position */
+}
+.mat-mdc-form-field .mat-mdc-floating-label.mdc-floating-label{
+    font-size: 14px !important;
+}
+.mdc-notched-outline__leading,.mdc-notched-outline__notch,.mdc-notched-outline__trailing {
+ border-color: var(--color-input-border) !important;
+}
+/* Remove number spinner from number inputs (Chrome, Safari, Edge) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+   margin: 0;
+}
+input::placeholder {
+  font-size: 13px !important;
+  color: #888 !important;
+}

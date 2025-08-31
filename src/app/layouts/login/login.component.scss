@@ -1,0 +1,64 @@
+.login-container {
+  @apply container mx-auto flex items-center justify-center;
+  @apply h-[25rem] sm:h-[25rem] md:h-[50rem] lg:h-[25rem];
+}
+
+.login-wrapper {
+  @apply grid grid-cols-1 md:grid-cols-2 p-6 rounded-xl shadow-lg  max-w-5xl;
+}
+
+.login-image-container {
+  @apply hidden md:block;
+}
+
+.login-image {
+  @apply flex justify-end items-center;
+}
+
+.login-form-container {
+  @apply flex justify-start items-center;
+}
+
+.login-form-box {
+  @apply p-5 rounded-md w-full;
+}
+
+.login-title {
+  @apply text-center mb-4;
+
+  span {
+    @apply text-gray-800 italic text-2xl drop-shadow-lg;
+  }
+}
+
+.login-logo {
+  @apply flex justify-center mb-3 rounded-lg;
+}
+
+.form-field {
+  @apply w-full mb-4;
+
+  input {
+    @apply h-12 w-full 
+  }
+}
+
+.toggle-btn {
+  @apply me-5;
+}
+
+.login-actions {
+  @apply flex justify-between mb-3;
+
+  .link {
+    @apply text-sm text-blue-700 cursor-pointer hover:underline;
+  }
+}
+
+.login-btn {
+  @apply p-3 w-40 text-sm text-white rounded-lg shadow-md hover:bg-blue-900 transition duration-300;
+  background-color: var(--color-primary);
+}
+.btn-container{
+  @apply flex justify-center mt-10;
+}

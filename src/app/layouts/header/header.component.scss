@@ -1,0 +1,39 @@
+::ng-deep {
+ /* Make menu items display horizontally */
+.p-tieredmenu {
+    display: flex !important;
+    border: none !important; /* Remove border */
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  .p-tieredmenu-root-list {
+    display: flex !important;  // Makes menu items appear in a row
+    flex-direction: row !important;
+    gap: 15px; // Adds spacing between menu items
+  }
+  .p-tieredmenu-submenu-icon {
+    display: none !important; /* Remove '>' submenu icon */
+  }
+  .p-tieredmenu-submenu {
+    margin-top: 30px !important; /* Space below the parent menu item */
+    padding: 10rem;
+    margin-left:2% !important; /* Adds left padding */
+  }
+  /* Custom Tailwind Classes */
+.p-tieredmenu {
+    @apply bg-white border border-gray-200 rounded-lg shadow-lg;
+  }
+  
+  .p-tieredmenu .p-menuitem-link {
+    @apply text-gray-700 hover:bg-gray-100 px-4 py-2;
+  }
+  
+  .p-tieredmenu .p-menuitem-active > .p-menuitem-link {
+    @apply bg-gray-100;
+  }
+  
+  .p-button-text {
+    @apply text-gray-700 hover:bg-gray-100 px-4 py-2 rounded-md;
+  }
+}

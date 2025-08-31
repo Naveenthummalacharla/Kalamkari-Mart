@@ -1,0 +1,159 @@
+<div class="register-container">
+
+  <div class="register-inner-grid">
+
+    <!-- Left Side: Image -->
+    <div class=" register-image-wrapper">
+      <img src="assets/images/loginsideimg.png" alt="Login Image" width="550"
+        class="object-contain h-auto max-h-[500px]">
+    </div>
+
+    <!-- Right Side: Form -->
+    <form [formGroup]="RegisterForm" (ngSubmit)="Register()">
+      <div class="register-form-grid">
+        <!-- **********Personal Details************ -->
+        <div class="register-logo">
+          <img src="assets/images/lotos-logo.png" width="250" height="200" />
+        </div>
+        <div class="register-back-nav">
+          <div class="register-back-button" matTooltip="Back" matTooltipPosition="left" [routerLink]="['/login']">
+            <mat-icon>arrow_back</mat-icon>
+            <span>Back</span>
+          </div>
+          <div class="mx-auto">
+            <span class="register-title">Register</span>
+          </div>
+        </div>
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>First Name</mat-label>
+          <input type="text" matInput class="input-field" formControlName="firstname" placeholder="Enter first name">
+          @if (RegisterForm.get('firstname')?.errors?.['required'] && (RegisterForm.get('firstname')?.touched ||
+          RegisterForm.get('firstname')?.dirty)) {
+          <mat-error>First is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Last Name</mat-label>
+          <input type="text" matInput class="input-field" formControlName="secondname" placeholder="Enter last name">
+          @if (RegisterForm.get('secondname')?.errors?.['required'] && (RegisterForm.get('secondname')?.touched ||
+          RegisterForm.get('secondname')?.dirty)) {
+          <mat-error>Second is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput class="input-field" formControlName="email" placeholder="Ex. pat@example.com">
+          @if (RegisterForm.get('email')?.errors?.['required'] && (RegisterForm.get('email')?.touched ||
+          RegisterForm.get('email')?.dirty)) {
+          <mat-error>Email is <strong>required</strong></mat-error>
+          } @else if (RegisterForm.get('email')?.errors?.['email'] && (RegisterForm.get('email')?.touched ||
+          RegisterForm.get('email')?.dirty)) {
+          <mat-error>Please enter a valid email address</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Phone</mat-label>
+          <input type="number" matInput class="input-field" formControlName="phoneno" placeholder="Enter phone number">
+          @if (RegisterForm.get('phoneno')?.errors?.['required'] && (RegisterForm.get('phoneno')?.touched ||
+          RegisterForm.get('phoneno')?.dirty)) {
+          <mat-error>PhoneNo is <strong>required</strong></mat-error>
+          } @else if(RegisterForm.get('phoneno')?.errors?.['pattern'] && (RegisterForm.get('phoneno')?.touched ||
+          RegisterForm.get('phoneno')?.dirty)){
+          <mat-error>Please enter a valid Phone Number</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Password</mat-label>
+          <input [type]="passwordVisible ? 'text' : 'password'" matInput class="input-field" formControlName="password"
+            placeholder="Enter Password">
+          <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button" class="me-5">
+            <mat-icon>{{ passwordVisible ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          @if (RegisterForm.get('password')?.errors?.['required'] && (RegisterForm.get('password')?.touched ||
+          RegisterForm.get('password')?.dirty)) {
+          <mat-error>Password is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Confirm Password</mat-label>
+          <input [type]="confirmPassVisible ? 'text' : 'password'" matInput class="input-field"
+            formControlName="confirmPassword" placeholder="Confirm Password">
+          <button mat-icon-button matSuffix (click)="toggleConfirmPasswordVisibility()" type="button" class="me-5">
+            <mat-icon>{{ confirmPassVisible ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          @if (RegisterForm.get('confirmPassword')?.errors?.['required'] &&
+          (RegisterForm.get('confirmPassword')?.touched || RegisterForm.get('confirmPassword')?.dirty)) {
+          <mat-error>ConfirmPassword is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+
+        <!-- **********Address********** -->
+        <div formGroupName="address" class="address-group">
+
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Line 1</mat-label>
+            <input type="text" matInput class="input-field" formControlName="line1" placeholder="Enter Line-1">
+            @if (RegisterForm.get('address.line1')?.errors?.['required'] && (RegisterForm.get('address.line1')?.touched
+            || RegisterForm.get('address.line1')?.dirty)) {
+            <mat-error>line-1 is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Line 2</mat-label>
+            <input type="text" matInput class="input-field" formControlName="line2" placeholder="Enter Line-2">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>City</mat-label>
+            <input type="text" matInput class="input-field" formControlName="city" placeholder="Enter City">
+            @if (RegisterForm.get('address.city')?.errors?.['required'] && (RegisterForm.get('address.city')?.touched ||
+            RegisterForm.get('address.city')?.dirty)) {
+            <mat-error>City is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>State</mat-label>
+            <input type="text" matInput class="input-field" formControlName="state" placeholder="Enter State">
+            @if (RegisterForm.get('address.state')?.errors?.['required'] && (RegisterForm.get('address.state')?.touched
+            || RegisterForm.get('address.state')?.dirty)) {
+            <mat-error>State is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Postal Code</mat-label>
+            <input type="number" matInput class="input-field" formControlName="postalCode"
+              placeholder="Enter Postal Code">
+            @if (RegisterForm.get('address.postalCode')?.errors?.['required'] &&
+            (RegisterForm.get('address.postalCode')?.touched || RegisterForm.get('address.postalCode')?.dirty)) {
+            <mat-error>postalCode is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="terms-checkbox">
+          <mat-checkbox class="example-margin" formControlName="termsAccepted">Accept Terms & Conditions</mat-checkbox>
+        </div>
+
+        <!-- **********Submit Button********** -->
+        <div class="button-wrapper">
+          <button mat-raised-button matTooltip="Create Account" matTooltipPosition="right" color="primary" type="submit"
+            [disabled]="!RegisterForm.get('termsAccepted')?.value" [ngClass]="{
+                  'button-enabled': RegisterForm.get('termsAccepted')?.value,
+                  'button-disabled': !RegisterForm.get('termsAccepted')?.value
+                }" class="submit-button">
+            Create Account
+          </button>
+
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>

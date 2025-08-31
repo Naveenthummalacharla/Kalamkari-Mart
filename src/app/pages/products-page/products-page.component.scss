@@ -1,0 +1,17 @@
+.mat-mdc-card {
+    height: 100%;
+    width: 100%;
+}
+.grid-container{
+ @apply grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:p-3;
+}
+.cart-btn{
+    @apply absolute bottom-0 left-0 right-0 translate-y-full opacity-0 w-full bg-blue-900 text-gray-200 rounded-b-lg p-2 transition-all duration-300 ease-in-out;
+}
+.product-card:hover .cart-btn {
+  @apply translate-y-0 opacity-100;
+}
+.product-card{
+ @apply  relative shadow-lg rounded-xl overflow-hidden
+}
+

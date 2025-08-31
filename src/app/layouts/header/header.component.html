@@ -1,0 +1,85 @@
+<div class="w-full overflow-x-hidden z-50">
+    <div class="container-fluid mx-auto sm:p-4 bg-green-50">
+      <div class="flex flex-col sm:flex-row items-center sm:justify-between gap-4 text-center">
+        <!-- Logo -->
+        <div class="w-full flex justify-center sm:ms-14">
+          <img src="assets/images/lotos-logo.png" width="150" height="150" alt="Logo" />
+        </div>
+  
+        <!-- Login & Cart -->
+        <div class="flex sm:flex-row gap-4">
+          <button class="flex items-center" matTooltip="Login" aria-label="Login" (click)=" Login()" >
+            <mat-icon class="me-2">login</mat-icon >Login
+          </button>
+          <button class="flex items-center" matTooltip="Cart" aria-label="Cart">
+            <mat-icon class="me-2">shopping_cart</mat-icon>Cart
+          </button>
+        </div>
+      </div>
+  
+      <!-- Navigation Menu -->
+      <div class="mt-4 flex justify-center flex-wrap gap-4">
+        <button mat-button class="px-4 py-2" matTooltip="Home">Home</button>
+        <button mat-button [matMenuTriggerFor]="Kalamkarisaries" class="px-4 py-2" matTooltip="Saries">Saries</button>
+        <button mat-button [matMenuTriggerFor]="Dressmaterials" class="px-4 py-2" matTooltip="Dress Materials">Dress Materials</button>
+        <button mat-button [matMenuTriggerFor]="duppatas" class="px-4 py-2" matTooltip="Duppatas">Duppatas</button>
+        <button mat-button [matMenuTriggerFor]="kuthis" class="px-4 py-2" matTooltip="Kurthis, Dresses & Others">Kurthis, Dresses & Others</button>
+      </div>
+    </div>
+  </div>
+  
+<!-- kalamkarisaries category -->
+<mat-menu #Kalamkarisaries="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="kalamkarisaries">KalamkariSaries</button>
+</mat-menu>
+<mat-menu #kalamkarisaries="matMenu">
+    <button mat-menu-item>Kalamkari Silk Saree</button>
+    <button mat-menu-item>Kalamkari Cotton Saree </button>
+    <button mat-menu-item>Kalamkari Crepe Saree</button>
+    <button mat-menu-item>Designer Kalamkari Saree</button>
+    <button mat-menu-item>Kalamkari Linen Printed Saree</button>
+    <button mat-menu-item>Kalamkari Border Sari</button>
+    <button mat-menu-item>Kalamkari Pattu Sarees</button>
+    <button mat-menu-item>Hand-Painted Kalamkari Sarees</button>
+    <button mat-menu-item>Kalamkari Georgette Saree</button>
+    <button mat-menu-item>Kalamkari Chiffon Saree</button>
+</mat-menu>
+
+<!-- Dress Material Category -->
+<mat-menu #Dressmaterials="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="AllDressMaterials">All DressMaterials</button>
+</mat-menu>
+<mat-menu #AllDressMaterials="matMenu">
+    <button mat-menu-item>All Unstitched Dress Materials</button>
+    <button mat-menu-item>Hand Block Print Dress Materials</button>
+    <button mat-menu-item>Ikat Dress Materials</button>
+    <button mat-menu-item>Cotton Dress Materials</button>
+    <button mat-menu-item>Mangalagiri Dress Material</button>
+    <button mat-menu-item>Banaras Dress Material</button>
+    <button mat-menu-item>Kalamkari Dress Material</button>
+    <button mat-menu-item>Kota Dress Material</button>
+</mat-menu>
+
+<!-- Duppatas Category -->
+<mat-menu #duppatas="matMenu">
+    <button mat-menu-item>All Duppattas</button>
+    <button mat-menu-item>Ikat Dupattas</button>
+    <button mat-menu-item>Handloom Duppattas</button>
+    <button mat-menu-item>Pen Kalamkari</button>
+    <button mat-menu-item>Gadwal Duppattas</button>
+    <button mat-menu-item>Patola Duppattas</button>
+    <button mat-menu-item>Bandhani Duppattas</button>
+    <button mat-menu-item>Kalamkari Duppattas</button>
+</mat-menu>
+
+<!-- Kuthis Category -->
+<mat-menu #kuthis="matMenu">
+    <button mat-menu-item>Kurthis & Dresses</button>
+    <button mat-menu-item>Gowns</button>
+    <button mat-menu-item>Kaftans</button>
+    <button mat-menu-item>Jewellery</button>
+    <button mat-menu-item>Bagas</button>
+    <button mat-menu-item>Bed Sheets</button>
+    <button mat-menu-item>Night Wears</button>
+    <button mat-menu-item>Cord Sets</button>
+</mat-menu>

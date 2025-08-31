@@ -1,0 +1,80 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+ -webkit-appearance: none;
+    margin: 0;
+}
+
+.register-container {
+    @apply container mx-auto flex h-[15rem] sm:h-[35rem] md:h-[50rem] lg:h-[25rem] items-center justify-center;
+}
+
+.register-inner-grid {
+    @apply grid md:grid-cols-2 gap-4 items-center rounded-lg justify-center w-full shadow-md p-4;
+}
+
+.register-image-wrapper {
+    @apply hidden md:flex justify-center;
+}
+
+.register-form-grid {
+    @apply grid grid-cols-2 sm:grid-cols-2 mt-5 md:grid-cols-3 gap-3 w-full;
+}
+
+.register-logo {
+    @apply col-span-full flex justify-center mb-3 sm:mb-3 rounded-lg;
+}
+
+.register-back-nav {
+    @apply col-span-full mb-2 flex items-center justify-between w-full relative;
+}
+
+.register-back-button {
+    span{
+     font-size: 14px;
+    }
+    mat-icon{
+        font-size: 20px;
+        height: 22px !important;
+    }
+    @apply absolute left-0 flex items-center gap-1 cursor-pointer text-gray-600;
+}
+
+.register-title {
+    @apply font-bold text-gray-800 italic text-2xl font-serif drop-shadow-lg;
+}
+
+.input-field {
+    @apply h-12 w-full;
+}
+
+.form-field {
+    @apply w-full;
+}
+
+.address-group {
+    @apply col-span-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 w-full;
+}
+
+.terms-checkbox {
+    @apply col-span-full;
+}
+
+.button-wrapper {
+    @apply col-span-full flex justify-center mt-2;
+}
+.submit-button{
+ @apply px-6 py-3 rounded-md transition-all;
+}
+.button-enabled{
+ @apply text-white text-sm hover:bg-blue-800;
+ background-color: var(--color-primary);
+}
+.button-disabled{
+ @apply bg-gray-300 text-sm text-gray-600 cursor-not-allowed;
+}
+::ng-deep.mat-mdc-checkbox label{
+   font-size: 13px;
+}
+::ng-deep .mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color {
+    font-size: 20px !important;
+}

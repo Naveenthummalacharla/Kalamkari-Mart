@@ -1,0 +1,29 @@
+<div class="container-fluid flex flex-col min-h-screen mx-auto p-0">
+
+    <!-- Fixed Header -->
+     @if(showHeaderFooter){
+      <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow">
+        <app-header></app-header>
+      </header>
+     }
+  
+    <!-- Spacer to offset fixed header height -->
+    <div class="h-[230px] sm:h-[150px] md:h-[150px]"></div> <!-- Adjust heights for mobile, tablet, and desktop -->
+  
+    <!-- Main Content -->
+    <main class="p-3 sm:p-3">
+      <router-outlet></router-outlet>
+    </main>
+  
+     <!-- Footer -->
+    @if(showHeaderFooter){
+      <footer class="mt-5">
+        <app-footer></app-footer>
+      </footer>
+    }
+   
+   
+  
+  </div>
+  
+  
